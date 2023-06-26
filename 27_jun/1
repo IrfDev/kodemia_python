@@ -18,13 +18,12 @@ def ask_to_continue():
         output_names()
 
 def output_names():
-    global is_user_finished
     print("Tupple of names: ", tuple(tupple_of_names))
     print("List of names: ", tupple_of_names)
     print("Set of names: ", set(tupple_of_names))
+
     is_user_finished = True
 
 
-while is_user_finished != True:
-    print(is_user_finished)
+while is_user_finished == False:
     ask_to_continue()
