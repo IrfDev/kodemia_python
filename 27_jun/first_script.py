@@ -15,17 +15,20 @@ def ask_to_continue():
     if lowercase_continuing_boolean == "true":
         ask_for_name()
     elif lowercase_continuing_boolean == "false":
-        return output_names()
+        output_names()
 
 def output_names():
     global is_user_finished
+    global tupple_of_names
+
     print("Tupple of names: ", tuple(tupple_of_names))
     print("List of names: ", tupple_of_names)
     print("Set of names: ", set(tupple_of_names))
+
     is_user_finished = True
+
     return tupple_of_names
 
 
-while is_user_finished != True:
-    print(is_user_finished)
+while is_user_finished != True:  
     ask_to_continue()
