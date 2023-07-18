@@ -36,17 +36,15 @@ print(f"These are all the articles: {all_articles}")
 
 # Create new Comment
 
-new_article = Article(
-    "New article",
+new_comment = Comment(
     "some contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome contentsome content",
-    "posted",
-    "https://cdn2.thecatapi.com/images/bom.jpg",
     "Irving",
+    "New article",
 )
 
 
-new_article.save()
+new_comment.save()
 
-all_articles = new_article.get_all()
+all_comments = new_comment.get_all()
 
-print(f"These are all the articles: {all_articles}")
+print(f"These are all the comments: {all_comments}")
