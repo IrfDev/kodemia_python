@@ -71,7 +71,10 @@ def read_file(file_path):
     try:
         get_is_file_exist(file_path)
         file = open(file_path)
-        print(file.read())
+        file_stream = file.read()
+        print(file_stream)
+
+        return file_stream
 
     except FileNotFoundError as error:
         raise IOError(f"File with path {file_path} doesn't exist") from error
