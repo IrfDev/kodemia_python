@@ -30,6 +30,4 @@ class Comment:
             file_manager.update_json_file(COMMENT_FILE_PATH, dict_comment, True)
 
         except FileNotFoundError:
-            file_manager.create_json_files(COMMENT_FILE_PATH, [])
-
-        file_manager.update_json_file(COMMENT_FILE_PATH, dict_comment)
+            file_manager.create_json_files(ARTICLE_FILE_PATH, [dict_comment])
