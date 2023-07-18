@@ -37,6 +37,4 @@ class Article:
             file_manager.update_json_file(ARTICLE_FILE_PATH, dict_article, True)
 
         except FileNotFoundError:
-            file_manager.create_json_files(ARTICLE_FILE_PATH, [])
-
-        file_manager.update_json_file(ARTICLE_FILE_PATH, dict_article)
+            file_manager.create_json_files(ARTICLE_FILE_PATH, [dict_article])
