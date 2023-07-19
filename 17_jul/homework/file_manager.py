@@ -10,11 +10,10 @@ JSON_ACCEPTED_TYPES = (list, dict)
 
 def is_content_valid(content, *types):
     types_to_use = types if len(types) > 0 else (str)
+    is_content_valid = content and isinstance(content, types_to_use)
 
-    is_content_valid_type = isinstance(content, types_to_use)
-
-    if is_content_valid_type:
-        return is_content_valid_type
+    if is_content_valid:
+        return is_content_valid
     else:
         raise ValueError
 
@@ -32,7 +31,7 @@ def create_json_files(file_name: str, content=None):
     with_content = is_content_valid(content, *JSON_ACCEPTED_TYPES)
 
     try:
-        open_mode = "x" if with_content else "x"
+        open_mode = "w" if with_content else "x"
 
         new_file = open(file_name, open_mode)
 
@@ -86,13 +85,11 @@ def update_json_file(file_name: str, content=None, overwrite: bool = False):
 
         is_content_valid(content, *JSON_ACCEPTED_TYPES)
 
-        file = open(file_name, "r")
+        file = open(file_name, open_mode)
 
         file_content = file.read()
 
         file_content_json = json.loads(file_content)
-
-        file.close()
 
         is_content_valid(file_content_json, *JSON_ACCEPTED_TYPES)
 
@@ -113,11 +110,9 @@ def update_json_file(file_name: str, content=None, overwrite: bool = False):
 
         file_content_string = json.dumps(file_content_json)
 
-        updatable_file = open(file_name, open_mode)
+        file.write(file_content_string)
 
-        updatable_file.write(file_content_string)
-
-        updatable_file.close()
+        file.close()
 
     except FileExistsError as error:
         raise IOError(
