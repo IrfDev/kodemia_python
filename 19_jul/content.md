@@ -36,3 +36,32 @@ The common package manager for python is [pypip or pip](https://pypi.org/).
 
 Where you can call different packages and import them as you need it
 
+### venv 
+
+Module to create virtual environments for python. It basically creates the required files for python execution, including pip packages. 
+
+The initial command to create a new virtual env is: 
+
+``````````bash
+python -m venv INITIAL_DIRECTORY
+
+``````````
+
+Each environment can be activated or deactivated
+
+#### To activate: 
+
+``````````bash
+source PATH/OF/YOUR/PROJECT/bin/activate
+``````````
+where `bin/activate` is the executable of the python environment 
+
+
+#### To deactivate:
+
+``````````bash
+deactivate
+``````````
+
+Preferably iniside the venv directory
+
