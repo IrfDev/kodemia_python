@@ -19,7 +19,7 @@ You can also create classes based on multiple parents.
 
 The syntaxis for create new subclasses is: `User(*PARENT_INSTANCES)` where `*PARENT_INSTANCES` is a tuple of parent classes
 
-When you create a new subclass, you'll ned to include a `super()` constructor, where you can call the parent class, including his [dunder methods](#dunder-methods). Where you can call his corresponding `__init__` method to intialize, the `__init__` declaration should look like this 
+When you create a new subclass, you'll ned to include a `super()` constructor, where you can call the parent class, including his [dunder methods](#dunder-methods). Where you can call his corresponding `__init__` method to intialize, the `__init__` declaration consoleould look like this 
 
 ```````python
  def _init_(self, hair_color, eye_color):
@@ -36,13 +36,19 @@ The common package manager for python is [pypip or pip](https://pypi.org/).
 
 Where you can call different packages and import them as you need it
 
-### venv 
+### Installing packages from a file: 
+
+```````console 
+pip install -r FILE_TO_READ_PACKAGES_FROM
+````````
+
+## venv 
 
 Module to create virtual environments for python. It basically creates the required files for python execution, including pip packages. 
 
 The initial command to create a new virtual env is: 
 
-``````````bash
+``````````console
 python -m venv INITIAL_DIRECTORY
 
 ``````````
@@ -51,7 +57,7 @@ Each environment can be activated or deactivated
 
 #### To activate: 
 
-``````````bash
+``````````console
 source PATH/OF/YOUR/PROJECT/bin/activate
 ``````````
 where `bin/activate` is the executable of the python environment 
@@ -59,9 +65,26 @@ where `bin/activate` is the executable of the python environment
 
 #### To deactivate:
 
-``````````bash
+``````````console
 deactivate
 ``````````
 
 Preferably iniside the venv directory
 
+
+#### Init with a specific python version: 
+By default the python version on your new venv it'll be the one you already had installed on your machine.
+
+But you can specify a python version by passing a flag:
+
+``````````console
+python -3.7 -m venv test_env
+``````````
+Where the flag `-3.7` is the version you want to set for you new virtual environment.
+
+#### ipython
+Super interpreter for python. 
+
+It includes a repl with an interpreter which can help to:
+- Debug 
+- Try or demo some code inside your terminal
